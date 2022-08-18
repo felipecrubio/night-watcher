@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   get '/', to: 'lists#index'
 
-  resources :lists, only: %i[index show new]
+  resources :lists, only: %i[index show new create]
 end
