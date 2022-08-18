@@ -1,0 +1,10 @@
+
+<div class="container">
+  <div class="form-list">
+    <h4>Create your list</h4>
+    <%= simple_form_for(@list) do |f| %>
+      <%= f.input :name %>
+      <%= f.submit class: "btn btn-dark" %>
+    <% end %>
+  </div>
+</div>
