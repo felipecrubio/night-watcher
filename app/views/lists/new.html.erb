@@ -1,10 +1,10 @@
 
 <div class="container">
-  <div class="form-list">
+  <div class="form-card">
     <h4>Create your list</h4>
     <%= simple_form_for(@list) do |f| %>
-      <%= f.input :name %>
-      <%= f.submit class: "btn btn-dark" %>
+      <%= f.input :name, input_html: { class: "input-dark" } %>
+      <%= f.submit class: "btn btn-purple" %>
     <% end %>
   </div>
 </div>

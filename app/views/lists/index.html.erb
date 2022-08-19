@@ -1,16 +1,18 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1618193319734-478296be37ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=737&q=80);">
   <div class="container">
     <p>List during the day</p>
-    <h1>Binge watch during the night</h1>
-    <%= link_to 'Create a list!', new_list_path, class: "btn btn-dark" %>
+    <h1>Watch during the night</h1>
   </div>
 </div>
 
 <div class="container my-3">
+  <div class="d-flex justify-content-end">
+    <%= link_to 'Create a list!', new_list_path, class: "btn btn-purple" %>
+  </div>
   <div class="row">
     <% @lists.each do |list| %>
       <div class="col-sm col-md-4">
-        <%= link_to list_path(list), :action => 'go' do %>
+        <%= link_to list_path(list) do %>
           <div class="card-category m-1 my-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
             <%= list.name %>
           </div>

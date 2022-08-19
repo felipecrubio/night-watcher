@@ -13,6 +13,15 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
+.card-movie {
+  width: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
 .card-trip {
   overflow: hidden;
   background: white;

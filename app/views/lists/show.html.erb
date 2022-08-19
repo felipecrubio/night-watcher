@@ -5,8 +5,9 @@
 </div>
 
 <div class="container my-3">
-  <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: "btn btn-dark" %>
-
+  <div class="d-flex justify-content-end">
+    <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: "btn btn-purple" %>
+  </div>
   <div class="row">
     <% @bookmarks.each do |bookmark| %>
       <div class="col-sm col-md-6">
