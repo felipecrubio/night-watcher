@@ -11,25 +11,28 @@
   <div class="row">
     <% @bookmarks.each do |bookmark| %>
       <div class="col-sm col-md-6">
-        <div class="card-trip">
-          <%= image_tag(bookmark.movie.poster_url) %>
-          <div class="card-trip-infos">
-            <div class="w-100">
-              <div class="d-flex">
-                <h2><%= bookmark.movie.title %></h2>
-                <i class="fas fa-star mx-1"></i>
-                <p><%= bookmark.movie.rating %></p>
-              </div>
-              <p class="mt-1 mb-3"><%= bookmark.movie.overview %></p>
-              <div class="d-flex justify-content-between">
-                <h2 class="card-trip-pricing"><%= bookmark.comment %></h2>
-                <%= link_to bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
-                  <i class="fa-solid fa-xmark"></i>
+          <div class="card-trip my-3">
+            <%= image_tag(bookmark.movie.poster_url) %>
+            <div class="card-trip-infos">
+              <div class="w-100">
+                <div class="d-flex align-items-center">
+                <%= link_to movie_path(bookmark.movie) do %>
+                  <h2><%= bookmark.movie.title %></h2>
                 <% end %>
+                  <i class="fas fa-star mx-1"></i>
+                  <p><%= bookmark.movie.rating %></p>
+                </div>
+                <p class="mt-2 mb-3"><%= bookmark.movie.overview %></p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <h2 class="card-trip-pricing"><%= bookmark.comment %></h2>
+                  <%= link_to bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "delete" do %>
+                    <i class="fa-solid fa-xmark"></i>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+
       </div>
     <% end %>
   </div>

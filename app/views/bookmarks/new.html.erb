@@ -1,13 +1,11 @@
 
 <div class="container">
-  <div class="form-list">
+  <div class="form-card">
     <h4>Choose a movie</h4>
-    <%# /lists/:list_id/bookmarks %>
-
-    <%= simple_form_for [@list, @bookmark] do |f| %>
-      <%= f.association :movie %>
-      <%= f.input :comment %>
-      <%= f.submit class: "btn btn-dark" %>
+    <%= simple_form_for [@list, @bookmark], html: { autocomplete: "off" } do |f| %>
+      <%= f.association :movie, input_html: { class: "input-dark" } %>
+      <%= f.input :comment, input_html: { class: "input-dark" } %>
+      <%= f.submit class: "btn btn-purple mt-2" %>
     <% end %>
   </div>
 </div>
